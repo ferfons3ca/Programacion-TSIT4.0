@@ -1,10 +1,15 @@
 #TUPLAS
 #Crear tres tuplas con datos random
 #Crear una lista que las contenga y mostrarla
+import random
 
-tupla1 = (13,1998,0.9,"rojo","hola","cohete",0.5)
-tupla2 = ("manzana",23,"banana",1976,20.9,"naranja")
-tupla3 = (2.0,"perro",2005,22,"gato","violeta","pájaro")
+tupla1 = (random.randint(1, 100), random.choice(["frutas", "oceano", "plantas"]), random.uniform(1.0, 10.0))
+
+tupla2 = (random.randint(1, 100), random.choice(["animal", "objeto", "pais"]), random.uniform(1.0, 10.0))
+
+tupla3 = (random.randint(1, 100), random.choice(["color claro", "color oscuro"]), random.uniform(1.0, 10.0))
+
 
 lista_de_tuplas = [tupla1, tupla2, tupla3]
+
 print(lista_de_tuplas)
