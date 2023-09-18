@@ -1,8 +1,7 @@
 from enum import Enum
 
 class Cursos:
-    def __init__(self,fecha_comienzo, titulo, descripcion, objetivos, programa, costo, duracion_meses, foto, estado
-):
+    def __init__(self,fecha_comienzo, titulo, descripcion, objetivos, programa, costo, duracion_meses, foto, estado):
         self.fecha_comienzo=fecha_comienzo
         self.titulo=titulo
         self.descripcion=descripcion
@@ -12,6 +11,7 @@ class Cursos:
         self.duracion_meses=duracion_meses
         self.foto=foto
         self.estado=estado
+        self.docentes=[]
         
     def get_descripcion(self):
         return self.descripcion
@@ -55,7 +55,24 @@ class Cursos:
     def set_estado(self, estado):
         self.estado = estado 
         
-        
+    
+    def __str__(self):
+        return f"Curso: {self.titulo}\nFecha de Inicio: {self.fecha_comienzo}\nDescripción: {self.descripcion}\nObjetivos: {self.objetivos}\nPrograma: {self.programa}\nCosto: {self.costo}\nDuración en Meses: {self.duracion_meses} meses\nDisponible: {'Sí' if self.estado else 'No'}"
+
+
+curso_1 = Cursos("2023-10-15", "Programación en Python", "Aprende a programar en Python desde cero.", "Dominar los fundamentos de Python.", ["Semana 1: Introducción a Python", "Semana 2: Estructura y Logica", "Semana 3: Api"], 199.99, 3, "python.jpg", True)
+curso_2 = Cursos("2023-11-05", "Carpinteria", "Domina las herramientas de carpinteria.", "Perfeccionar tus habilidades con la madera.", ["Semana 1: Uso de herramientas", "Semana 2: Materiales", "Semana 3: Construccion"], 249.99, 2, "diseño.jpg", True)
+curso_3 = Cursos("2023-12-01", "Herreria", "Aprende Herreria.", "Impulsar tus habilidades con los metales.", ["Semana 1: Fundicion", "Semana 2: Materiales", "Semana 3: Proyectos de fundicion"], 149.99, 3, "Diseños.jpg", False)
+
+
+print("Curso 1:")
+print(curso_1)
+print("\nCurso 2:")
+print(curso_2)
+print("\nCurso 3:")
+print(curso_3)
+
+
 class Categoria:
     def __init__(self,inicial,intermedio,avanzado):
         self.inicial=inicial
@@ -112,7 +129,7 @@ class Clases:
     def set_URLDrive(self,URLDrive):
         self.URLDrive=URLDrive
         
-              
+        
 class Docentes:
     def __init__(self, apellido, nombre, dni, fecha_nacimiento, direccion, localidad, codigo_postal, provincia, telefono_celular, email):
         self.apellido = apellido
@@ -175,6 +192,28 @@ class Docentes:
         self.email=email
         
         
+docente1 = Docentes("Gomez", "Juan", "75848345", "06/01/1996", "Alberdi 777", "Cordoba", "96785", "Cordoba", "7543975398", "juan@gmail.com")
+curso1 = Cursos("2023-10-15", "Programación en Python", "Aprende a programar en Python desde cero.", "Dominar los fundamentos de Python.", ["Semana 1: Introducción a Python", "Semana 2: Estructura y Logica", "Semana 3: Api"], 199.99, 3, "python.jpg", True)
+
+docente2 = Docentes("Gonzales", "Javier", "774534673", "13/06/82","Rivadavia 342", "Santo tome", "64684", "Santa Fe" ,"4645645646", "javier@gmail.com")
+curso2 = Cursos("2023-11-05", "Carpinteria", "Domina las herramientas de carpinteria.", "Perfeccionar tus habilidades con la madera.", ["Semana 1: Uso de herramientas", "Semana 2: Materiales", "Semana 3: Construccion"], 249.99, 2, "diseño.jpg", True)
+
+docente3= Docentes("Martinez", "Luis", "535345345", "24/2/73","Hirigoyen 890", "La plata", "23422", "Buenos Aires" ,"3535445353", "martinez@gmail.com")
+curso_3 = Cursos("2023-12-01", "Herreria", "Aprende Herreria.", "Impulsar tus habilidades con los metales.", ["Semana 1: Fundicion", "Semana 2: Materiales", "Semana 3: Proyectos de fundicion"], 149.99, 3, "Diseños.jpg", False)
+
+print(f"Curso: {curso1.titulo}")
+print(f"Docentes del curso:")
+print(f"{docente1.nombre} {docente1.apellido}")
+
+print(f"Curso: {curso_2.titulo}")
+print(f"Docentes del curso")
+print(f"{docente2.nombre} {docente2.apellido}")
+
+print(f"Curso: {curso_3.titulo}")
+print(f"Docentes del curso")
+print(f"{docente3.nombre} {docente3.apellido}")
+
+
 def crear_cuenta():
     nombre = input("Nombre: ")
     apellido = input("Apellido: ")
@@ -310,87 +349,88 @@ class Administrador:
     
     def set_clave(self,clave):
         self.clave=clave
-     
-curso_ejemplo = Cursos("07/03/2024", "Curso de Python", "Aprende Python desde cero", "Objetivos del curso", "Programa del curso", 100, 3, "ruta_de_la_foto.jpg", "Activo")
-curso_ejemplo = Cursos("014/03/2024", "Curso de Carpinteria", "Aprende Carpinteria desde cero", "Objetivos del curso", "Programa del curso", 100, 3, "ruta_de_la_foto.jpg", "Activo")
-curso_ejemplo = Cursos("21/03/2024", "Curso de Tec.Reparador PC", "Aprende a reparar pc desde cero", "Objetivos del curso", "Programa del curso", 100, 3, "ruta_de_la_foto.jpg", "Activo")
+        
+        
+curso_1 = Cursos("2023-10-15", "Programación en Python", "Aprende a programar en Python desde cero.", "Dominar los fundamentos de Python.", ["Semana 1: Introducción a Python", "Semana 2: Estructura y Logica", "Semana 3: Api"], 199.99, 3, "python.jpg", True)
+curso_2 = Cursos("2023-11-05", "Carpinteria", "Domina las herramientas de carpinteria.", "Perfeccionar tus habilidades con la madera.", ["Semana 1: Uso de herramientas", "Semana 2: Materiales", "Semana 3: Construccion"], 249.99, 2, "diseño.jpg", True)
+curso_3 = Cursos("2023-12-01", "Herreria", "Aprende Herreria.", "Impulsar tus habilidades con los metales.", ["Semana 1: Fundicion", "Semana 2: Materiales", "Semana 3: Proyectos de fundicion"], 149.99, 3, "Diseños.jpg", False)
 
 usuario_final = UsuarioFinal("Juan", "González", " ", "05/06/1995", "Santiago", "Buenos Aires", "85787234", "Buenos Aires", "1188232384", "juangonzales@gmail.com", "password")
-usuario_final.inscribirse_curso(curso_ejemplo)
+usuario_final.inscribirse_curso(curso_1)
 
-administrador = Administrador("Admin", "Admin", " ", " ", " ", "Ciudad", " ", "Provincia", " ", "admin@gmail.com", "password")
+admitradror=Administrador("Admin", "Admin", " ", " ", " ", "Ciudad", " ", "Provincia", " ", "admin@gmail.com", "password")
+
 
 class CarritoDeCompras:
     def __init__(self):
         self.items = []
-
+        
     def agregar_curso(self, curso):
         self.items.append(curso)
-
+        
     def ver_detalles(self):
         for curso in self.items:
             print(f"Curso: {curso.titulo}")
-            print(f"Duración: {curso.duracion}")
+            print(f"Duración: {curso.duracion_meses}")
             print(f"Costo: {curso.costo}")
             print()
 
 class MedioDePago:
     def __init__(self, tipo):
         self.tipo = tipo
-
+        
 class TarjetaCreditoDebito(MedioDePago):
     def __init__(self, tipo, numero, nombre):
         super().__init__(tipo)
         self.numero = numero
         self.nombre = nombre
-
+        
 class TransferenciaBancaria(MedioDePago):
     def __init__(self, tipo, cuenta):
         super().__init__(tipo)
         self.cuenta = cuenta
-
+        
 class Compra:
     def __init__(self, usuario, monto):
         self.fecha = None
         self.usuario = usuario
         self.monto = monto
-
+        
 carrito = CarritoDeCompras()
-curso1 = Cursos("foto1.jpg", "Curso de Python", "10 semanas", 100)
-curso2 = Cursos("foto2.jpg", "Curso de SQL", "8 semanas", 80)
+curso_1 = Cursos("2023-10-15", "Programación en Python", "Aprende a programar en Python desde cero.", "Dominar los fundamentos de Python.", ["Semana 1: Introducción a Python", "Semana 2: Estructura y Lógica", "Semana 3: API"], 199.99, 3, "python.jpg", True)
+curso_2 = Cursos("2023-11-05", "Carpintería", "Domina las herramientas de carpintería.", "Perfeccionar tus habilidades con la madera.", ["Semana 1: Uso de herramientas", "Semana 2: Materiales", "Semana 3: Construcción"], 249.99, 2, "diseño.jpg", True)
+curso_3 = Cursos("2023-12-01", "Herrería", "Aprende Herrería.", "Impulsar tus habilidades con los metales.", ["Semana 1: Fundición", "Semana 2: Materiales", "Semana 3: Proyectos de fundición"], 149.99, 3, "Diseños.jpg", False)
 
-carrito.agregar_curso(curso1)
-carrito.agregar_curso(curso2)
-
+carrito.agregar_curso(curso_1)
+carrito.agregar_curso(curso_2)
+carrito.agregar_curso(curso_3)
 carrito.ver_detalles()
 
-medio_pago = TarjetaCreditoDebito("Tarjeta de crédito", "1234-5678-9012-3456", "John Doe")
+medio_pago = TarjetaCreditoDebito("Tarjeta de crédito", "5354-2325-5257-4353", "Franco Correa")
 compra = Compra("Usuario1", 180)
-compra.fecha = "2023-09-02"
+compra.fecha = "23-09-02"
 
 print(f"Compra realizada el {compra.fecha} por {compra.usuario}. Monto total: {compra.monto}")
 print(f"Medio de pago: {medio_pago.tipo}")
 print(f"Número de tarjeta: {medio_pago.numero}")
 print(f"Nombre en la tarjeta: {medio_pago.nombre}")
 
-
 class Compra:
-    def __init__(self,Id_Compra,Id_Carrito_Compra,Id_Medios_Pago,Id_Usuario,Fecha,Monton_Total):
-        self.Id_Compra=Id_Compra
-        self.Id_Carrito_Compra=Id_Carrito_Compra
-        self.Id_Medio_Pago=Id_Medios_Pago
-        self.Id_Usuario=Id_Usuario
-        self.Fecha=Fecha
-        self.Monton_Total=Monton_Total
+    def __init__(self, Id_Compra, Id_Carrito_Compra, Id_Medios_Pago, Id_Usuario, Fecha, Monton_Total):
+        self.Id_Compra = Id_Compra
+        self.Id_Carrito_Compra = Id_Carrito_Compra
+        self.Id_Medios_Pago = Id_Medios_Pago
+        self.Id_Usuario = Id_Usuario
+        self.Fecha = Fecha
+        self.Monton_Total = Monton_Total
         
     def __str__(self):
-        return f"Compra ID: {self.Id_Compra}\nCarrito de Compra ID: {self.Id_Carrito_Compra}\nMedio de Pago ID: {self.Id_Medio_Pago}\nUsuario ID: {self.Id_Usuario}\nFecha ID: {self.Id_Usuario}\nMonto Total ID: {self.Monto_Total}"
+        return f"Compra ID: {self.Id_Compra}\nCarrito de Compra ID: {self.Id_Carrito_Compra}\nMedio de Pago ID: {self.Id_Medios_Pago}\nUsuario ID: {self.Id_Usuario}\nFecha ID: {self.Fecha}\nMonto Total ID: {self.Monton_Total}"
     
-compra= Compra(12313132,324234234,3213213,2313213,"2023-09-04",312321321)
+compra = Compra(12313132, 324234234, 3213213, 2313213, "2023-09-04", 312321321)
 
 print(compra.Id_Compra)
 print(compra.Fecha)
-
 
 class MedioContacto:
     def __init__(self, id_medio_contacto, fecha, email, telefono, direccion, nombre):
@@ -404,12 +444,10 @@ class MedioContacto:
     def __str__(self):
         return f"Medio de Contacto ID: {self.id_medio_contacto}\nFecha: {self.fecha}\nEmail: {self.email}\nTeléfono: {self.telefono}\nDirección: {self.direccion}\nNombre: {self.nombre}"
 
-
-medio_contacto= MedioContacto(1, "2023-09-04", "ejemplo@email.com", "123-456-7890", "123 Calle Principal", "Juan Pérez")
+medio_contacto = MedioContacto(1, "2023-09-04", "ejemplo@email.com", "123-456-7890", "123 Calle Principal", "Juan Pérez")
 
 print(medio_contacto.id_medio_contacto)
 print(medio_contacto.email)
-
 
 class TiposMedioContacto(Enum):
     WHATSAPP = "WhatsApp"
@@ -417,18 +455,14 @@ class TiposMedioContacto(Enum):
     CALL_CENTER = "Call center"
     REFERIDO_INTERNO = "Referido interno"
 
-
 tipo_medio_contacto = TiposMedioContacto.WHATSAPP
 print(tipo_medio_contacto)
-
 
 valor_real = tipo_medio_contacto.value
 print(valor_real)
 
-
 for tipo in TiposMedioContacto:
     print(tipo)
-
 
 class MedioContacto:
     def __init__(self, id_medio_contacto, fecha, email, telefono, direccion, nombre):
@@ -447,7 +481,6 @@ class TiposMedioContacto(Enum):
     CORREO_ELECTRONICO = MedioContacto(2, "2023-09-04", "ejemplo@email.com", "", "", "")
     CALL_CENTER = MedioContacto(3, "2023-09-04", "", "987-654-3210", "", "")
     REFERIDO_INTERNO = MedioContacto(4, "2023-09-04", "", "", "", "Referido Interno")
-
 
 tipo_medio_contacto = TiposMedioContacto.WHATSAPP
 print(tipo_medio_contacto.value)
